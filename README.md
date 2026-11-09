@@ -2,6 +2,37 @@
 
 Movie recommendation website on the MovieLens dataset. FastAPI backend, static frontend.
 
+### 1. Home -- Personalised Movie Recommendations
+
+The home page displays the top movie recommendation based on the user's
+rating history, along with personalised movie picks and match
+percentages.
+
+![Home Page](images/1.png)
+
+### 2. Browse -- Movie Discovery
+
+Browse the movie collection, search for titles, filter by genres, and
+sort movies based on ratings and popularity.
+
+![Browse Page](images/2.png)
+
+### 3. For You -- Personalised Recommendations
+
+The recommendation page displays movies ranked according to predicted
+user preferences, with match percentages and explanations based on
+previously rated movies.
+
+![For You Page](images/3.png)
+
+### 4. About -- Model Evaluation
+
+The About page presents dataset statistics, model performance, and
+offline evaluation results comparing matrix factorisation against
+baseline recommendation approaches.
+
+![About Page](images/4.png)
+
 ## Run
 
 Use Python 3.12 to match the Docker image. PowerShell shown; on macOS/Linux use `source .venv/bin/activate`.
@@ -66,10 +97,6 @@ python scripts/fetch_posters.py    # optional: pre-fetch (~10 min); otherwise po
 - The app and Docker Compose both read `TMDB_API_KEY` from `.env`; a real environment variable overrides it. `.env` is git-ignored: never commit it. On Render set it under Environment.
 - TMDB requires the credit line shown in the footer and About page: "This product uses the TMDB API but is not endorsed or certified by TMDB." TMDB also asks for its logo in credits; see themoviedb.org/about/logos-attribution.
 - Poster images are loaded by the browser directly from TMDB's CDN.
-
-## Design
-
-Colours `#F8CC22` (yellow text, buttons) on `#3E3F4D`-derived dark greys. Fonts: Poppins (headings, bundled in `app/static/fonts/`, SIL OFL) and Satoshi (body, loaded from Fontshare in `index.html`; falls back to system-ui offline). To self-host Satoshi, download it from fontshare.com and add an `@font-face` in `style.css`.
 
 ## How it works
 
