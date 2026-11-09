@@ -1,6 +1,10 @@
 # MovieMatch
 
-Movie recommendation website on the MovieLens dataset. FastAPI backend, static frontend.
+Movie recommendation systems traditionally rely on historical user ratings and preferences to generate personalised suggestions. However, user interests are dynamic and can change over time, making conventional recommendation approaches less effective in adapting to evolving preferences. This project explores the application of **Reinforcement Learning through Non-Stationary Multi-Armed Bandit algorithms** to develop an adaptive movie recommendation system.
+
+Using the **MovieLens ML-Latest-Small dataset** from GroupLens, the system leverages movie ratings, genres, and user interactions to model recommendation decisions. Each movie or recommendation option is treated as an arm, while user feedback serves as the reward signal for the learning agent. Unlike stationary bandit approaches that assume reward distributions remain constant, non-stationary bandit learning accounts for changing user preferences by adapting its reward estimates over time. This enables the system to balance exploration and exploitation, discovering potentially relevant movies while continuously refining recommendations based on new feedback.
+
+The application integrates a **FastAPI backend** with a web-based frontend, providing an interactive movie discovery and recommendation experience. Movie posters are retrieved using The Movie Database (TMDB) API. The project demonstrates how reinforcement learning can support personalised recommendations in dynamic environments, where user preferences are not fixed but continuously evolve.
 
 ### 1. Home -- Personalised Movie Recommendations
 
