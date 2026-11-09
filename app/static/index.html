@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MovieMatch</title>
+<meta name="theme-color" content="#14151b">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header id="nav">
+  <div class="top">
+    <a class="brand" href="/">MovieMatch</a>
+    <nav id="tabs">
+      <button data-tab="home" class="on">Home</button>
+      <button data-tab="browse">Browse</button>
+      <button data-tab="foryou">For you <span id="badge" class="badge" hidden></span></button>
+      <button data-tab="about">About</button>
+    </nav>
+    <input id="q" type="search" placeholder="Search movies" autocomplete="off" aria-label="Search movies">
+  </div>
+</header>
+
+<main>
+  <section id="home">
+    <div id="hero" class="hero"></div>
+    <div id="rows" class="rows"></div>
+  </section>
+
+  <section id="browse" class="page" hidden>
+    <div class="filters">
+      <div id="genres" class="chips"></div>
+      <select id="sort" aria-label="Sort">
+        <option value="popular">Most rated</option>
+        <option value="rating">Top rated</option>
+        <option value="year">Newest</option>
+        <option value="title">A–Z</option>
+      </select>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="muted center" hidden>No movies found.</p>
+    <div class="center"><button id="more" class="btn" hidden>Load more</button></div>
+  </section>
+
+  <section id="foryou" class="page" hidden>
+    <div class="filters">
+      <div id="fy-genres" class="chips"></div>
+      <button id="clear" class="linkbtn" hidden>Clear my ratings</button>
+    </div>
+    <div id="fy-start" hidden>
+      <h2 class="title">Rate 5 movies to unlock your picks</h2>
+      <p id="fy-progress" class="muted"></p>
+      <div id="onboard" class="grid"></div>
+    </div>
+    <div id="fy-list" class="grid"></div>
+    <p id="fy-empty" class="muted center" hidden>No recommendations in this genre.</p>
+  </section>
+
+  <section id="about" class="page" hidden></section>
+</main>
+
+<footer>Data: MovieLens, GroupLens Research</footer>
+<dialog id="detail"></dialog>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
